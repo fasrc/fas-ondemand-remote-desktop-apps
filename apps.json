@@ -1,0 +1,33 @@
+{
+    "apps": [
+        {
+            "app_name": "fas-remote-desktop-general",
+            "cpu": {
+                "value": 1,
+                "select": true,
+                "min": 1,
+                "max": 64
+            },
+            "memory": {
+                "value": 4,
+                "select": true,
+                "min": 4,
+                "max": 256
+            },
+            "tasks": {
+                "value": 1,
+                "select": true,
+                "min": 1,
+                "max": 64
+            },
+            "title": "Remote Desktop"
+        }
+    ],
+    "base": {
+        "app_type": "remote_desktop",
+        "singularity_image": "remote_desktop_082021.sif",
+        "git_branch": "master",
+        "git_dir": "fas-ondemand-remote-desktop",
+        "git_url": "https://github.com/fasrc/fas-ondemand-remote-desktop.git"
+    }
+}
