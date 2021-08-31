@@ -70,12 +70,41 @@ def update_form_and_manifest(base, app):
     tasks_min = tasks.get('min')
     tasks_max = tasks.get('max')
 
+    abaqus = app.get("abaqus", base['abaqus'])
+    intel = app.get("intel", base['abaqus'])
+    matlab = app.get("matlab", base['abaqus'])
+    comsol = app.get("comsol", base['abaqus'])
+    lumerical = app.get("lumerical", base['abaqus'])
+    git = app.get("git", base['abaqus'])
+    vscode = app.get("vscode", base['abaqus'])
+
     singularity_filename = singularity_image
 
     # Prepare eRuby template vars 
     erb_vars = []
     erb_vars.append(f"@title = '{title}'")
     erb_vars.append(f"@{app_type}_version = '{singularity_filename}'")
+    # abaqus
+    erb_vars.append(f"@use_abaqus = '{abaqus['enabled']}'")
+    erb_vars.append(f"@abaqus_version = '{abaqus['version']}'")
+    # intel
+    erb_vars.append(f"@use_intel = '{intel['enabled']}'")
+    erb_vars.append(f"@intel_version = '{intel['version']}'")
+    # matlab
+    erb_vars.append(f"@use_matlab = '{matlab['enabled']}'")
+    erb_vars.append(f"@matlab_version = '{matlab['version']}'")
+    # comsol
+    erb_vars.append(f"@use_comsol = '{comsol['enabled']}'")
+    erb_vars.append(f"@comsol_version = '{comsol['version']}'")
+    # lumerical
+    erb_vars.append(f"@use_lumerical = '{lumerical['enabled']}'")
+    erb_vars.append(f"@lumerical_version = '{lumerical['version']}'")
+    # git
+    erb_vars.append(f"@use_git = '{git['enabled']}'")
+    erb_vars.append(f"@git_version = '{git['version']}'")
+    # vscode
+    erb_vars.append(f"@use_vscode = '{vscode['enabled']}'")
+    erb_vars.append(f"@vscode_version = '{vscode['version']}'")
     if memory_select:
         erb_vars.append(f"@custom_memory_per_node_select = true")
         erb_vars.append(f"@custom_memory_per_node_min = {memory_min}")

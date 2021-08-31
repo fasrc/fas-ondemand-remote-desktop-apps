@@ -12,7 +12,7 @@
                 "value": 4,
                 "select": true,
                 "min": 4,
-                "max": 256
+                "max": 250
             },
             "tasks": {
                 "value": 1,
@@ -20,7 +20,105 @@
                 "min": 1,
                 "max": 64
             },
+            "matlab": {
+                "enabled": true,
+                "version": "matlab/R2021a-fasrc01"
+            },
             "title": "Remote Desktop"
+        },
+        {
+            "app_name": "fas-remote-desktop-abaqus",
+            "cpu": {
+                "value": 1,
+                "select": true,
+                "min": 1,
+                "max": 64
+            },
+            "memory": {
+                "value": 4,
+                "select": true,
+                "min": 4,
+                "max": 250
+            },
+            "tasks": {
+                "value": 1,
+                "select": true,
+                "min": 1,
+                "max": 64
+            },
+            "abaqus": {
+                "enabled": true,
+                "version": "abaqus-2019.sqs"
+            },
+            "intel": {
+                "enabled": true,
+                "version": "intel/21.2.0-fasrc01"
+            },
+            "matlab": {
+                "enabled": true,
+                "version": "matlab/R2021a-fasrc01"
+            },
+            "title": "Remote Desktop Abaqus - Matlab"
+        },
+        {
+            "app_name": "fas-remote-desktop-comsol",
+            "cpu": {
+                "value": 1,
+                "select": true,
+                "min": 1,
+                "max": 64
+            },
+            "memory": {
+                "value": 4,
+                "select": true,
+                "min": 4,
+                "max": 250
+            },
+            "tasks": {
+                "value": 1,
+                "select": true,
+                "min": 1,
+                "max": 64
+            },
+            "comsol": {
+                "enabled": true,
+                "version": "comsol-teaching/5.6-fasrc01"
+            },
+            "matlab": {
+                "enabled": true,
+                "version": "matlab/R2021a-fasrc01"
+            },
+            "title": "Remote Desktop Comsol - Matlab"
+        },
+        {
+            "app_name": "fas-remote-desktop-lumerical",
+            "cpu": {
+                "value": 1,
+                "select": true,
+                "min": 1,
+                "max": 64
+            },
+            "memory": {
+                "value": 4,
+                "select": true,
+                "min": 4,
+                "max": 250
+            },
+            "tasks": {
+                "value": 1,
+                "select": true,
+                "min": 1,
+                "max": 64
+            },
+            "lumerical": {
+                "enabled": false,
+                "version": "lumerical-teaching/2021R2_R2_7bf43e7149-fasrc01"
+            },
+            "matlab": {
+                "enabled": true,
+                "version": "matlab/R2021a-fasrc01"
+            },
+            "title": "Remote Desktop Lumerical - Matlab"
         }
     ],
     "base": {
@@ -28,6 +126,34 @@
         "singularity_image": "remote_desktop_082021.sif",
         "git_branch": "master",
         "git_dir": "fas-ondemand-remote-desktop",
-        "git_url": "https://github.com/fasrc/fas-ondemand-remote-desktop.git"
+        "git_url": "https://github.com/fasrc/fas-ondemand-remote-desktop.git",
+        "abaqus": {
+            "enabled": false,
+            "version": "abaqus-2019.sqs"
+        },
+        "intel": {
+            "enabled": false,
+            "version": "intel/21.2.0-fasrc01"
+        },
+        "matlab": {
+            "enabled": false,
+            "version": "matlab/R2021a-fasrc01"
+        },
+        "comsol": {
+            "enabled": false,
+            "version": "comsol-teaching/5.6-fasrc01"
+        },
+        "lumerical": {
+            "enabled": false,
+            "version": "lumerical-teaching/2021R2_R2_7bf43e7149-fasrc01"
+        },
+        "git": {
+            "enabled": true,
+            "version": "git/2.17.0-fasrc01"
+        },
+        "vscode": {
+            "enabled": true,
+            "version": "vscode/1.49-fasrc01"
+        }
     }
 }
