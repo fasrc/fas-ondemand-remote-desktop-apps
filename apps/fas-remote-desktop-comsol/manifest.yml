@@ -1,0 +1,15 @@
+---
+name: Remote Desktop Comsol - Matlab
+icon: fa://desktop
+category: Interactive Apps
+subcategory: Desktops
+role: batch_connect
+description: |
+  This form will launch an interactive desktop session on a node on the Academic Cluster
+
+  You can select the amount of RAM (in GB), number of cores, and Timelimit
+
+  Upon request you can receive email notification when the job starts. You must specify your email address.
+
+  IMPORTANT: Please note that it would not be possible to run singularity inside this application.
+

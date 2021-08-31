@@ -1,0 +1,29 @@
+#!/bin/env bash
+
+zenity --info --text  '<span foreground="red" font="18"><b><i>Matlab</i></b> is starting up.\nPlease allow a minute to load.\nThank you for your patience</span>' --width=500 --height=200 &
+
+module purge
+
+<% if context.use_intel.to_s.downcase == 'true' %>
+# ifort stuff ( module load ifort )
+module load <%= context.intel_version %>
+<%- end -%>
+
+# matlab stuff
+module load <%= context.matlab_version %>
+
+export MTLB_WORKDIR=/scratch/$USER/$SLURM_JOBID
+mkdir -p $MTLB_WORKDIR
+
+export MATLAB_PREFDIR=/dev/shm/$USER/$SLURM_JOBID ;
+mkdir -p $MATLAB_PREFDIR
+
+# Set working directory to home directory
+cd $HOME
+
+cat > java.opts <<EOF
+-Dsun.java2d.xrender=false
+EOF
+
+matlab  -desktop -softwareopengl &
+

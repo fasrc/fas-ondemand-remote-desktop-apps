@@ -1,0 +1,27 @@
+#!/bin/env bash
+
+zenity --info --text  '<span foreground="red" font="18"><b><i>VScode</i></b> is starting up.\nPlease allow a minute to load.\nThank you for your patience</span>' --width=500 --height=200 &
+
+module purge
+module load <%= context.git_version %>
+
+<% if context.use_intel.to_s.downcase == 'true' %>
+# ifort stuff ( module load ifort )
+module load <%= context.intel_version %>
+<%- end -%>
+
+<% if context.use_matlab.to_s.downcase == 'true' %>
+module load <%= context.matlab_version %>
+export MTLB_WORKDIR=/scratch/$USER/$SLURM_JOBID
+mkdir -p $MTLB_WORKDIR
+export MATLAB_PREFDIR=/dev/shm/$USER/$SLURM_JOBID ;
+mkdir -p $MATLAB_PREFDIR
+<%- end -%>
+
+
+# run vscode
+module load <%= context.vscode_version %>
+
+# run vscode
+code
+

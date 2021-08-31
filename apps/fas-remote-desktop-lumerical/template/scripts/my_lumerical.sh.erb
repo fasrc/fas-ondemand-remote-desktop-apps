@@ -1,0 +1,15 @@
+#!/bin/env bash
+
+zenity --info --text  '<span foreground="red" font="18"><b><i>Lumerical</i></b> is starting up.\nPlease allow a minute to load.\nThank you for your patience</span>' --width=500 --height=200 &
+
+module purge
+module load <%= context.lumerical_version %>
+
+export LUMERICAL_WORKDIR=/scratch/$USER/$SLURM_JOBID 
+mkdir -p $LUMERICAL_WORKDIR
+# Set working directory 
+cd "${LUMERICAL_WORKDIR}"
+
+launcher
+
+
