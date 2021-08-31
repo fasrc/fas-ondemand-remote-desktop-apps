@@ -111,7 +111,7 @@
                 "max": 64
             },
             "lumerical": {
-                "enabled": false,
+                "enabled": true,
                 "version": "lumerical-teaching/2021R2_R2_7bf43e7149-fasrc01"
             },
             "matlab": {

@@ -62,7 +62,7 @@ attributes:
   use_abaqus: False
   use_matlab: True
   use_comsol: False
-  use_lumerical: False
+  use_lumerical: True
   intel_version: abaqus-2019.sqs
   abaqus_version: abaqus-2019.sqs
   matlab_version: matlab/R2021a-fasrc01
