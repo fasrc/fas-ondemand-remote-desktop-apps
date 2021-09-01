@@ -59,6 +59,10 @@ module load  <%= context.comsol_version %>
 module load <%= context.lumerical_version %>
 <%- end -%>
 
+<% if context.use_stata.to_s.downcase == 'true' %>
+module load <%= context.stata_version %>
+<%- end -%>
+
 
 
 module load <%= context.vscode_version %>

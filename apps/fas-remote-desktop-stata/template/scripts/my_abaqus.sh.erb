@@ -1,13 +1,13 @@
 #!/bin/env bash
 
-module purge
+zenity --info --text  '<span foreground="red" font="18"><b><i>Abaqus</i></b> is starting up.\nPlease allow a minute to load.\nThank you for your patience</span>' --width=500 --height=200 &
 
+module purge
 <% if context.use_intel.to_s.downcase == 'true' %>
 # ifort stuff ( module load ifort )
 module load <%= context.intel_version %>
 <%- end -%>
 
-<% if context.use_abaqus.to_s.downcase == 'true' %>
 # abaqus stuff
 export ABAQUS_HOME=/n/sw/abaqus-2019
 export PATH=/n/sw/abaqus-2019/SIMULIA/CAE/2019/linux_a64/code/bin:$PATH
@@ -21,7 +21,6 @@ export PATH=/n/sw/abaqus-2019/SIMULIA/Isight/2019/linux_a64/code/bin:$PATH
 export PATH=/n/sw/abaqus-2019/SIMULIA/Isight/2019/linux_a64/code/command:$PATH
 export PATH=/n/sw/abaqus-2019/SIMULIA/fe-safe/2019/linux_a64/code/bin:$PATH
 export PATH=/n/sw/abaqus-2019/SIMULIA/fe-safe/2019/linux_a64/code/command:$PATH
-<%- end -%>
 
 <% if context.use_matlab.to_s.downcase == 'true' %>
 module load <%= context.matlab_version %>
@@ -31,43 +30,6 @@ export MATLAB_PREFDIR=/dev/shm/$USER/$SLURM_JOBID ;
 mkdir -p $MATLAB_PREFDIR
 <%- end -%>
 
-
-<% if context.use_comsol.to_s.downcase == 'true' %>
-export MYSCRATCH=/n/holyscratch01/Academic-cluster/<%= context.semester %>/$(id -g -n)/SCRATCH/$USER
-if [ -d /n/holyscratch01/Academic-cluster/<%= context.semester %>/$(id -g -n)/SCRATCH/  ]; then        
-  # create the folder if it does not exists
-  if [ ! -e "$MYSCRATCH" ]; then
-      mkdir -m 700 $MYSCRATCH
-  fi
-  # Add symlink to a scratch data folder 
-  if [ -e "$MYSCRATCH" ] && [ ! -e "$HOME/scratch_folder" ]; then
-      ln -s $MYSCRATCH $HOME/scratch_folder
-  fi
-fi
-
-export COMSOL_CONF=$HOME/scratch_folder/.comsol
-mkdir -p $COMSOL_CONF
-
-# Set working directory
-export COMSOL_WORKDIR=$HOME/scratch_folder/$SLURM_JOBID
-mkdir -p $COMSOL_WORKDIR
-
-module load  <%= context.comsol_version %>
-<%- end -%>
-
-<% if context.use_lumerical.to_s.downcase == 'true' %>
-module load <%= context.lumerical_version %>
-<%- end -%>
-
-<% if context.use_stata.to_s.downcase == 'true' %>
-module load <%= context.stata_version %>
-<%- end -%>
-
-
-
-module load <%= context.vscode_version %>
-module load <%= context.git_version %>
-
 unset SLURM_GTIDS
+abaqus cae -mesa
 
-xfce4-terminal

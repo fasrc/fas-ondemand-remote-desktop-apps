@@ -1,0 +1,13 @@
+#!/bin/env bash
+
+zenity --info --text  '<span foreground="red" font="18"><b><i>Stata</i></b> is starting up.\nPlease allow a minute to load.\nThank you for your patience</span>' --width=500 --height=200 &
+
+module purge
+module load <%= context.stata_version %>
+
+<%- if context.custom_num_cores.to_i == 1 -%>
+xstata-se
+<%- else -%>
+xstata-mp "set processors <%= context.custom_num_cores.to_i %>"
+<%- end -%>
+

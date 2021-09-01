@@ -1,5 +1,5 @@
 ---
-title: Remote Desktop Lumerical - Matlab
+title: Remote Desktop Stata - Matlab
 cluster: "academic"
 attributes:
   desktop: "myxfce"
@@ -62,8 +62,8 @@ attributes:
   use_abaqus: False
   use_matlab: True
   use_comsol: False
-  use_lumerical: True
-  use_stata: False
+  use_lumerical: False
+  use_stata: True
   intel_version: intel/21.2.0-fasrc01
   abaqus_version: abaqus-2019.sqs
   matlab_version: matlab/R2021a-fasrc01

@@ -71,12 +71,13 @@ def update_form_and_manifest(base, app):
     tasks_max = tasks.get('max')
 
     abaqus = app.get("abaqus", base['abaqus'])
-    intel = app.get("intel", base['abaqus'])
-    matlab = app.get("matlab", base['abaqus'])
-    comsol = app.get("comsol", base['abaqus'])
-    lumerical = app.get("lumerical", base['abaqus'])
-    git = app.get("git", base['abaqus'])
-    vscode = app.get("vscode", base['abaqus'])
+    intel = app.get("intel", base['intel'])
+    matlab = app.get("matlab", base['matlab'])
+    comsol = app.get("comsol", base['comsol'])
+    lumerical = app.get("lumerical", base['lumerical'])
+    stata = app.get("stata", base['stata'])
+    git = app.get("git", base['git'])
+    vscode = app.get("vscode", base['vscode'])
 
     singularity_filename = singularity_image
 
@@ -99,6 +100,9 @@ def update_form_and_manifest(base, app):
     # lumerical
     erb_vars.append(f"@use_lumerical = '{lumerical['enabled']}'")
     erb_vars.append(f"@lumerical_version = '{lumerical['version']}'")
+    # stata
+    erb_vars.append(f"@use_stata = '{stata['enabled']}'")
+    erb_vars.append(f"@stata_version = '{stata['version']}'")
     # git
     erb_vars.append(f"@use_git = '{git['enabled']}'")
     erb_vars.append(f"@git_version = '{git['version']}'")

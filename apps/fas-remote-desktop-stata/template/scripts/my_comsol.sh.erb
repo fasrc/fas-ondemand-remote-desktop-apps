@@ -1,0 +1,34 @@
+#!/bin/env bash
+
+zenity --info --text  '<span foreground="red" font="18"><b><i>Comsol</i></b> is starting up.\nPlease allow a minute to load.\nThank you for your patience</span>' --width=500 --height=200 &
+
+module purge
+
+<% if context.use_intel.to_s.downcase == 'true' %>
+# ifort stuff ( module load ifort )
+module load <%= context.intel_version %>
+<%- end -%>
+
+export MYSCRATCH=/n/holyscratch01/Academic-cluster/<%= context.semester %>/$(id -g -n)/SCRATCH/$USER
+if [ -d /n/holyscratch01/Academic-cluster/<%= context.semester %>/$(id -g -n)/SCRATCH/  ]; then 
+  # create the folder if it does not exists
+  if [ ! -e "$MYSCRATCH" ]; then
+      mkdir -m 700 $MYSCRATCH
+  fi
+  # Add symlink to a scratch data folder 
+  if [ -e "$MYSCRATCH" ] && [ ! -e "$HOME/scratch_folder" ]; then
+      ln -s $MYSCRATCH $HOME/scratch_folder
+  fi
+fi
+
+export COMSOL_CONF=$HOME/scratch_folder/.comsol 
+mkdir -p $COMSOL_CONF
+
+# Set working directory 
+export COMSOL_WORKDIR=$HOME/scratch_folder/$SLURM_JOBID 
+mkdir -p $COMSOL_WORKDIR
+cd "${COMSOL_WORKDIR}"
+
+module load  <%= context.comsol_version %>
+
+comsol -3drend sw -tmpdir  $COMSOL_CONF  -prefsdir $COMSOL_CONF 

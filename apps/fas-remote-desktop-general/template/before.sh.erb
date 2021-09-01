@@ -403,6 +403,22 @@ EOF
 chmod +x $DESKTOP_FOLDER/Lumerical.desktop
 <%- end -%>
 
+<% if context.use_stata.to_s.downcase == 'true' %>
+## create icon for Stata
+export stata_icon=<%= session.staged_root.join("assets", "stata.png") %>
+export stata_script=<%= session.staged_root.join("scripts", "my_stata.sh") %>
+cat > $DESKTOP_FOLDER/Stata.desktop <<EOF
+[Desktop Entry]
+Version=1.0
+Type=Application
+Exec=$stata_script
+Icon=$stata_icon
+Terminal=false
+Name=Stata
+Comment=Startup Stata
+EOF
+chmod +x $DESKTOP_FOLDER/Stata.desktop
+<%- end -%>
 
 ## create icon for vscode
 export vscode_icon=<%= session.staged_root.join("assets", "vscode.png") %>

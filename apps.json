@@ -119,6 +119,36 @@
                 "version": "matlab/R2021a-fasrc01"
             },
             "title": "Remote Desktop Lumerical - Matlab"
+        },
+        {
+            "app_name": "fas-remote-desktop-stata",
+            "cpu": {
+                "value": 1,
+                "select": true,
+                "min": 1,
+                "max": 64
+            },
+            "memory": {
+                "value": 4,
+                "select": true,
+                "min": 4,
+                "max": 250
+            },
+            "tasks": {
+                "value": 1,
+                "select": true,
+                "min": 1,
+                "max": 64
+            },
+            "stata": {
+                "enabled": true,
+                "version": "stata/17.0-fasrc01"
+            },
+            "matlab": {
+                "enabled": true,
+                "version": "matlab/R2021a-fasrc01"
+            },
+            "title": "Remote Desktop Stata - Matlab"
         }
     ],
     "base": {
@@ -146,6 +176,10 @@
         "lumerical": {
             "enabled": false,
             "version": "lumerical-teaching/2021R2_R2_7bf43e7149-fasrc01"
+        },
+        "stata": {
+            "enabled": false,
+            "version": "stata/17.0-fasrc01"
         },
         "git": {
             "enabled": true,

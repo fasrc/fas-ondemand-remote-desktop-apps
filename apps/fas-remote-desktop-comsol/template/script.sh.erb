@@ -14,7 +14,7 @@ container_image=/n/singularity_images/Academic-cluster/<%= context.semester %>/<
 
 <% if context.use_abaqus.to_s.downcase == 'true' %>
 # we need to use contain to protect abaqus and use this to expose other software
-export SING_BINDS=" --contain -B /tmp -B /dev -B /scratch -B `dirname $HOME` -B /n/helmod/apps -B /n/helmod/modulefiles -B /n/sw/eb -B /n/sw/intel-cluster-studio-2017 -B /n/sw/intel-oneapi-2021  -B /n/sw/comsol56-teaching -B /n/sw/lumerical-2021R2-R2-7bf43e7149_teaching  -B /n/holyscratch01 "
+export SING_BINDS=" --contain -B /tmp -B /dev -B /scratch -B `dirname $HOME` -B /n/helmod/apps -B /n/helmod/modulefiles -B /n/sw/eb -B /n/sw/intel-cluster-studio-2017 -B /n/sw/intel-oneapi-2021  -B /n/sw/comsol56-teaching -B /n/sw/lumerical-2021R2-R2-7bf43e7149_teaching -B /n/sw/stata-17 -B /n/holyscratch01 "
 <%- end -%>
 
 export SING_BINDS=" $SING_BINDS  -B /etc/nsswitch.conf -B /etc/sssd/ -B /var/lib/sss -B /etc/slurm -B /slurm -B /var/run/munge  -B `which sbatch ` -B `which srun ` -B `which sacct ` -B `which scontrol `   -B /usr/lib64/slurm/  -B /usr/lib64/libmunge.so.2 -B /usr/lib64/libmunge.so.2.0.0 "
