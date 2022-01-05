@@ -10,7 +10,7 @@ module purge && module restore
 
 export SINGULARITYENV_XDG_CONFIG_HOME=$XDG_CONFIG_HOME
 
-container_image=/n/singularity_images/Academic-cluster/<%= context.semester %>/<%= context.course %>/<%= context.centos_version %>
+container_image=/n/singularity_images/Academic-cluster/images/<%= context.course %>/<%= context.centos_version %>
 
 <% if context.use_abaqus.to_s.downcase == 'true' %>
 # we need to use contain to protect abaqus and use this to expose other software
