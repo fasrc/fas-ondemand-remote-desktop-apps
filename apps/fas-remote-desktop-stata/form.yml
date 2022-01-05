@@ -3,6 +3,7 @@ title: Remote Desktop Stata - Matlab
 cluster: "academic"
 attributes:
   desktop: "myxfce"
+  semester: SPRING2022
   course: fasrc-general
   bc_vnc_idle: 0
   node_type: null
@@ -75,6 +76,7 @@ attributes:
 form:
   - bc_vnc_idle
   - desktop
+  - semester
   - course
   - bc_vnc_resolution
   - bc_num_slots
