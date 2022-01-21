@@ -16,7 +16,7 @@ attributes:
     label: "Allocated Time (expressed in MM , or HH:MM:SS , or DD-HH:MM)."
     value: "04:00:00"
     widget: text_field
-  bc_queue: "academic"
+  bc_queue: "broadwell"
   bc_num_hours: null
   custom_email_address:
     label: email for status notification
@@ -67,7 +67,7 @@ attributes:
   intel_version: intel/21.2.0-fasrc01
   abaqus_version: abaqus-2019.sqs
   matlab_version: matlab/R2021a-fasrc01
-  comsol_version: comsol-teaching/5.6-fasrc01
+  comsol_version: comsol-teaching/6.0-fasrc01
   lumerical_version: lumerical-teaching/2021R2_R2_7bf43e7149-fasrc01
   stata_version: stata/17.0-fasrc01
   vscode_version: vscode/1.49-fasrc01
