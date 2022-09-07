@@ -9,18 +9,19 @@ module load <%= context.intel_version %>
 
 <% if context.use_abaqus.to_s.downcase == 'true' %>
 # abaqus stuff
-export ABAQUS_HOME=/n/sw/abaqus-2019
-export PATH=/n/sw/abaqus-2019/SIMULIA/CAE/2019/linux_a64/code/bin:$PATH
-export PATH=/n/sw/abaqus-2019/SIMULIA/CAE/2019/linux_a64/code/command:$PATH
-export PATH=/n/sw/abaqus-2019/SimulationServices/V6R2019x/linux_a64/code/bin:$PATH
-export PATH=/n/sw/abaqus-2019/SimulationServices/V6R2019x/linux_a64/code/command:$PATH
-export PATH=/n/sw/abaqus-2019/SIMULIA/Commands:$PATH
-export PATH=/n/sw/abaqus-2019/SIMULIA/Tosca/2019/linux_a64/code/bin:$PATH
-export PATH=/n/sw/abaqus-2019/SIMULIA/Tosca/2019/linux_a64/code/command:$PATH
-export PATH=/n/sw/abaqus-2019/SIMULIA/Isight/2019/linux_a64/code/bin:$PATH
-export PATH=/n/sw/abaqus-2019/SIMULIA/Isight/2019/linux_a64/code/command:$PATH
-export PATH=/n/sw/abaqus-2019/SIMULIA/fe-safe/2019/linux_a64/code/bin:$PATH
-export PATH=/n/sw/abaqus-2019/SIMULIA/fe-safe/2019/linux_a64/code/command:$PATH
+#export ABAQUS_HOME=/n/sw/abaqus-2019
+#export PATH=/n/sw/abaqus-2019/SIMULIA/CAE/2019/linux_a64/code/bin:$PATH
+#export PATH=/n/sw/abaqus-2019/SIMULIA/CAE/2019/linux_a64/code/command:$PATH
+#export PATH=/n/sw/abaqus-2019/SimulationServices/V6R2019x/linux_a64/code/bin:$PATH
+#export PATH=/n/sw/abaqus-2019/SimulationServices/V6R2019x/linux_a64/code/command:$PATH
+#export PATH=/n/sw/abaqus-2019/SIMULIA/Commands:$PATH
+#export PATH=/n/sw/abaqus-2019/SIMULIA/Tosca/2019/linux_a64/code/bin:$PATH
+#export PATH=/n/sw/abaqus-2019/SIMULIA/Tosca/2019/linux_a64/code/command:$PATH
+#export PATH=/n/sw/abaqus-2019/SIMULIA/Isight/2019/linux_a64/code/bin:$PATH
+#export PATH=/n/sw/abaqus-2019/SIMULIA/Isight/2019/linux_a64/code/command:$PATH
+#export PATH=/n/sw/abaqus-2019/SIMULIA/fe-safe/2019/linux_a64/code/bin:$PATH
+#export PATH=/n/sw/abaqus-2019/SIMULIA/fe-safe/2019/linux_a64/code/command:$PATH
+module load <%= context.abaqus_version %>
 <%- end -%>
 
 <% if context.use_matlab.to_s.downcase == 'true' %>

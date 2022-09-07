@@ -3,7 +3,7 @@ title: Remote Desktop Abaqus - Matlab
 cluster: "academic"
 attributes:
   desktop: "myxfce"
-  semester: SPRING2022
+  semester: FALL2022
   course: fasrc-general
   bc_vnc_idle: 0
   node_type: null
@@ -65,13 +65,14 @@ attributes:
   use_lumerical: False
   use_stata: False
   intel_version: intel/21.2.0-fasrc01
-  abaqus_version: abaqus-2019.sqs
+  abaqus_version: abaqus/2021-fasrc01
   matlab_version: matlab/R2021a-fasrc01
   comsol_version: comsol-teaching/5.6-fasrc01
   lumerical_version: lumerical-teaching/2021R2_R2_7bf43e7149-fasrc01
   stata_version: stata/17.0-fasrc01
   vscode_version: vscode/1.49-fasrc01
   git_version: git/2.17.0-fasrc01
+  python_version: Anaconda3/2020.11
 
 form:
   - bc_vnc_idle
@@ -106,3 +107,4 @@ form:
   - stata_version
   - vscode_version
   - git_version
+  - python_version
