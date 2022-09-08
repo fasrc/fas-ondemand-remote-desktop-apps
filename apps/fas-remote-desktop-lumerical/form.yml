@@ -3,7 +3,7 @@ title: Remote Desktop Lumerical - Matlab
 cluster: "academic"
 attributes:
   desktop: "myxfce"
-  semester: SPRING2022
+  semester: FALL2022
   course: fasrc-general
   bc_vnc_idle: 0
   node_type: null
