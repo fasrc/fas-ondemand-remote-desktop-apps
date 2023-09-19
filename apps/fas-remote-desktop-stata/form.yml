@@ -57,7 +57,7 @@ attributes:
     value: 1
     help: |
           **_Checking this box will create a desktop folder unique to this job_**
-  centos_version: remote_desktop_082021.sif
+  centos_version: urcds-ondemand-linux-desktop-2e63ed.sif
   use_intel: False
   use_abaqus: False
   use_matlab: True
