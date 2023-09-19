@@ -1,6 +1,5 @@
 ---
 name: Remote Desktop Stata - Matlab
-icon: fa://desktop
 category: Interactive Apps
 subcategory: Desktops
 role: batch_connect
